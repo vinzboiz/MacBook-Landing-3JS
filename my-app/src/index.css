@@ -128,7 +128,11 @@ body {
     }
 
     video {
-      @apply mx-auto lg:translate-y-5 2xl:translate-y-0;
+      @apply mx-auto lg:translate-y-5 2xl:translate-y-0 opacity-0 transition-opacity duration-700 ease-in-out;
+
+      &.hero-video--visible {
+        @apply opacity-100;
+      }
     }
 
     button {
@@ -170,7 +174,11 @@ body {
         @apply small-medium flex-between bg-neutral-800 rounded-full px-6 py-2.5 gap-2;
 
         div {
-          @apply size-8 rounded-full cursor-pointer bg-white text-black flex-center;
+          @apply size-8 rounded-full cursor-pointer bg-transparent text-white flex-center;
+        }
+
+        .active {
+          @apply bg-white text-black;
         }
       }
     }
